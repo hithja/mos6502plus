@@ -4,9 +4,8 @@ There are some examples of MOS6502+ code. All code is written at `main()` functi
 ### Storing a value in A
 At this example we'll write a program that stores A value and prints it.
 ```C++
-memory[0xFFFC] = CPU::INS_JMP_ABS; // At first we should jump to some address (for instance 0x4240)
-memory[0xFFFD] = 0x40; // Low byte
-memory[0xFFFE] = 0x42; // High byte
+memory[0xFFFC] = 0x40; // Low byte
+memory[0xFFFD] = 0x42; // High byte
 
 memory[0x4240] = CPU::INS_LDA_IM;
 memory[0x4241] = 0x42; // Storing 0x42 value in A
@@ -24,10 +23,8 @@ Congratulations! You've written your first program on MOS6502+ ASM! 🎉
 ### Storing the maximum of X and Y in A
 Now, we'll write a program that stores maximum of X and Y in A register. 
 ```C++
-memory[0xFFFC] = CPU::INS_JMP_ABS;
-memory[0xFFFC] = CPU::INS_JMP_ABS; // Jumping to 0x4240
-memory[0xFFFD] = 0x40; // Low byte
-memory[0xFFFE] = 0x42; // High byte
+memory[0xFFFC] = 0x40; // Low byte
+memory[0xFFFD] = 0x42; // High byte
 
 memory[0x4240] = CPU::INS_LDX_IM;
 memory[0x4241] = 0x42; // Storing 0x42 value in X
@@ -47,9 +44,8 @@ Y: 43
 ### Pushing A value to the stack then pulling it from here
 This program will push A value to the stack, then it'll get it from the stack.
 ```C++
-memory[0xFFFC] = CPU::INS_JMP_ABS;
-memory[0xFFFD] = 0x40;
-memory[0xFFFE] = 0x42;
+memory[0xFFFC] = 0x40; // Low byte
+memory[0xFFFD] = 0x42; // High byte
 
 memory[0x4240] = CPU::INS_LDA_IM; // Storing 0x67 value in A
 memory[0x4241] = 0x67;

@@ -1,0 +1,62 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <algorithm>
+#include <cstdint>
+
+using Byte = std::uint8_t;
+using Word = std::uint16_t;
+
+static constexpr Byte 
+        INS_LDA_IM = 0xA9,
+        INS_LDA_ZP = 0xA5,
+        INS_LDA_ZPX = 0xB5,
+        INS_LDA_ABS = 0xAD,
+        INS_LDX_IM = 0xA2,
+        INS_LDX_ABS = 0xAE,
+        INS_LDY_IM = 0xA0,
+        INS_LDY_ABS = 0xAC,
+        INS_STA_ABS = 0x8D,
+        INS_STX_ABS = 0x8E,
+        INS_STY_ABS = 0x8C,
+        INS_JMP_ABS = 0x4C,
+        INS_ADC_IM = 0x69,
+        INS_SBC_IM = 0xE9,
+        INS_DEC_ABS = 0xCE,
+        INS_INC_ABS = 0xEE,
+        INS_INC_ZP = 0xE6,
+        INS_DEC_ZP = 0xC6,
+        INS_INX = 0xE8,
+        INS_DEX = 0xCA,
+        INS_INY = 0xC8,
+        INS_DEY = 0x88,
+        INS_TXA = 0x8A,
+        INS_TAX = 0xAA,
+        INS_TYA = 0x98,
+        INS_TAY = 0xA8,
+        INS_CLC = 0x18,
+        INS_SEC = 0x38,
+        INS_BCC = 0x90,
+        INS_BCS = 0xB0,
+        INS_BEQ = 0xF0,
+        INS_BNE = 0xD0,
+        INS_PLA = 0x68,
+        INS_PHA = 0x48,
+        INS_JSR = 0x20,
+        INS_RTS = 0x60,
+        INS_AND_IM = 0x26,
+        INS_ORA_IM = 0x09,
+        INS_EOR_IM = 0x49,
+        INS_AND_ABS = 0x2D,
+        INS_ORA_ABS = 0x0D,
+        INS_EOR_ABS = 0x4D,
+        INS_BRK = 0x00,
+        INS_RTI = 0x40,
+        // My own opcodes
+        INS_PLX = 0x2B,
+        INS_PHX = 0x3B,
+        INS_PLY = 0x4B,
+        INS_PHY = 0x5B,
+        INS_MIN = 0x0F,
+        INS_MAX = 0x1F,
+        INS_PRT = 0xA7,
+        INS_EXT = 0x02;
